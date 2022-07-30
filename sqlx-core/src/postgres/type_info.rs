@@ -12,7 +12,7 @@ use crate::type_info::TypeInfo;
 /// Type information for a PostgreSQL type.
 #[derive(Debug, Clone, PartialEq)]
 #[cfg_attr(feature = "offline", derive(serde::Serialize, serde::Deserialize))]
-pub struct PgTypeInfo(pub(crate) PgType);
+pub struct PgTypeInfo(pub PgType);
 
 impl Deref for PgTypeInfo {
     type Target = PgType;
