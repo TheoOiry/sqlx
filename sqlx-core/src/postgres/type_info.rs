@@ -217,8 +217,8 @@ impl PgTypeInfo {
         Self(PgType::DeclareWithName(UStr::Static(name)))
     }
 
-    pub fn with_shared_name(name: Arc<str>) -> Self {
-        Self(PgType::DeclareWithName(UStr::Shared(name)))
+    pub fn with_dynamic_name(name: &str) -> Self {
+        Self(PgType::DeclareWithName(UStr::new(name)))
     }
 
     /// Create a `PgTypeInfo` from an OID.
