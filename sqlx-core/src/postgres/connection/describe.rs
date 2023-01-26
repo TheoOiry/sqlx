@@ -346,7 +346,7 @@ WHERE rngtypid = $1
         // language=SQL
         let (oid,): (Oid,) = query_as(
             "
-            SELECT $1::regtype::oid;
+                SELECT oid FROM pg_catalog.pg_type WHERE oid = $1::regtype
                 ",
         )
         .bind(name)
